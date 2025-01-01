@@ -101,7 +101,7 @@ router.patch('/:id', verifyToken, async (req, res) => {
         let amount = orderToUpdate.amount;
         if (items) {
 
-            // If items are given in PATCH, the amount is from zero
+            // If items are given in PATCH, the amount is calculated from zero
             amount = 0;
             if (items.length == 0) {
                 return res.status(400).send('Order must have items.');
